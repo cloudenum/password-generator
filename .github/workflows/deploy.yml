@@ -35,22 +35,3 @@ jobs:
           source: "build"
           target: ${{ secrets.SSH_TARGET }}
           rm: true
-
-      - name: Start PM2 processes 🚀
-        uses: appleboy/ssh-action@master
-        env:
-          FNM_PATH: "/home/${{ secrets.SSH_USERNAME }}/.local/share/fnm"
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          debug: true
-          script_stop: true
-          envs: FNM_PATH
-          script: |
-            set -euo pipefail
-            export PATH="$FNM_PATH:$PATH"
-            eval "`fnm env`"
-            cd ${{ secrets.SSH_TARGET }}
-            npm run pm2:start:production
