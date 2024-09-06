@@ -1,0 +1,14 @@
+{
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.quickSuggestions": {
+		"strings": "on"
+	},
+	"yaml.schemas": {
+		"https://json.schemastore.org/github-workflow.json": "file:///home/pingu/MyProjects/password-generator/.github/workflows/deploy.yml"
+	},
+	"typescript.tsdk": "node_modules/typescript/lib"
+}
